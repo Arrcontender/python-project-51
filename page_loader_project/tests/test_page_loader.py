@@ -30,17 +30,21 @@ def test_download_pics():
     with requests_mock.Mocker() as m:
         text = open('page_loader_project/tests/fixtures/pic.html').read()
         m.get('http://test.com/picture', text=text)
-        pic = open('page_loader_project/tests/fixtures/some/beautiful/pic.png', 'rb').read()
+        pic = open('page_loader_project/tests/fixtures/some/beautiful/pic.png',
+                   'rb').read()
         m.get('http://test.com/picture/some/beautiful/pic.png', content=pic)
-        second_pic = open('page_loader_project/tests/fixtures/pic.jpg', 'rb').read()
+        second_pic = open('page_loader_project/tests/fixtures/pic.jpg',
+                          'rb').read()
         m.get('http://test.com/picture/pic.jpg', content=second_pic)
-        expected_pic = open('page_loader_project/tests/fixtures/expected_pic.html', 'r').read()
+        expected_pic = open(
+            'page_loader_project/tests/fixtures/expected_pic.html',
+            'r').read()
         with tempfile.TemporaryDirectory() as tmpdirname:
             download('http://test.com/picture', tmpdirname)
             current = open(tmpdirname + '/test-com-picture.html').read()
             new_dir = tmpdirname + "/test-com-picture_files"
-            new_file = new_dir + "/test-com-picture-some-beautiful-pic.png"
-            new_file1 = new_dir + "/test-com-picture-pic.jpg"
+            # new_file = new_dir + "/test-com-picture-some-beautiful-pic.png"
+            # new_file1 = new_dir + "/test-com-picture-pic.jpg"
             assert exists(new_dir)
             # assert exists(new_file)
             # assert exists(new_file1)

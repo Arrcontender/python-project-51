@@ -46,7 +46,8 @@ def get_pic_name(url: str, src: str, directory: str):
 def get_new_src_in_html(url: str, src: str):
     files_storage = get_files_path(url)
     path, ext = splitext(src)
-    file_name = re.split(r'\W+', path[7:] if src.startswith('http:/') else path[8:])
+    file_name = re.split(r'\W+',
+                         path[7:] if src.startswith('http:/') else path[8:])
     if ext == '.png':
         file_name = '-'.join(file_name) + '.png'
     else:
