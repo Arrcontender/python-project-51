@@ -7,3 +7,7 @@
 Downloading page and returning file path
 
 [![asciicast](https://asciinema.org/a/FABtceSCKL9uRgplIEa7KaB7F.svg)](https://asciinema.org/a/FABtceSCKL9uRgplIEa7KaB7F)
+
+Downloading images from html
+
+[![asciicast](https://asciinema.org/a/dwiom4qcSJH2lfQegrW8ni1qx.svg)](https://asciinema.org/a/dwiom4qcSJH2lfQegrW8ni1qx)
